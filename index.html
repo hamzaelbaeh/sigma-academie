@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sigma Academie — Soutien scolaire & langues</title>
+  <meta name="description" content="Sigma Academie: soutien scolaire du primaire au bac, et programmes de langues. Petits groupes, 4 salles, suivi personnalisé.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark">S</span>
+        <span data-i18n="brand">Sigma Academie</span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#programmes" data-i18n="nav_programs">Programmes</a>
+        <a href="#pourquoi" data-i18n="nav_why">Pourquoi nous</a>
+        <a href="#faq" data-i18n="nav_faq">FAQ</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button class="lang-btn active" type="button" data-lang="fr">FR</button>
+          <button class="lang-btn" type="button" data-lang="ar">AR</button>
+        </div>
+        <a class="btn btn-gold btn-sm" href="#inscription" data-i18n="nav_cta">Inscrire mon enfant</a>
+        <button class="menu-toggle" type="button" id="menuToggle" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="orb orb-gold" aria-hidden="true"></div>
+      <div class="orb orb-blue" aria-hidden="true"></div>
+      <div class="orb orb-purple" aria-hidden="true"></div>
+      <div class="mesh" aria-hidden="true"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow" data-i18n="eyebrow">✦ Centre de soutien scolaire · Maroc</div>
+          <h1 data-i18n-html="hero_title">La réussite scolaire,<br><span class="grad-text">clairement accompagnée</span></h1>
+          <p class="hero-sub" data-i18n="hero_sub">Du primaire au bac, plus des programmes de langues. Petits groupes, professeurs suivis, et un parcours adapté à chaque élève.</p>
+          <div class="hero-cta">
+            <a class="btn btn-gold btn-glow" href="#inscription" data-i18n="cta_primary">Inscrire mon enfant</a>
+            <a class="btn btn-ghost" href="#programmes" data-i18n="cta_secondary">Voir les programmes</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <strong class="ltr-num">4</strong>
+              <span data-i18n="stat_rooms">salles de cours</span>
+            </div>
+            <div class="stat">
+              <strong class="ltr-num">1→Bac</strong>
+              <span data-i18n="stat_levels">niveaux scolaires</span>
+            </div>
+            <div class="stat">
+              <strong data-i18n="stat_lang_value">Langues</strong>
+              <span data-i18n="stat_lang">y compris non scolarisés</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal reveal-delay">
+          <div class="float-card">
+            <div class="float-card-glow"></div>
+            <div class="float-card-inner">
+              <img src="img/hero-classroom.png" alt="Salle de cours Sigma Academie" width="640" height="480" loading="eager">
+              <div class="float-badge">
+                <span class="pill" data-i18n="card_pill">Ouvert aux inscriptions</span>
+              </div>
+              <div class="float-caption">
+                <strong data-i18n="card_title">Espace parents</strong>
+                <div class="mini-row">
+                  <span class="chip"><span class="ltr-num">01</span> <span data-i18n="card_1">Inscription simple</span></span>
+                  <span class="chip"><span class="ltr-num">02</span> <span data-i18n="card_2">Placement en groupe</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST / BENTO STRIP -->
+    <section class="trust-section">
+      <div class="container">
+        <div class="bento trust-bento">
+          <div class="bento-card reveal">
+            <div class="ico">①</div>
+            <h3 data-i18n="t1_t">Petits groupes</h3>
+            <p data-i18n="t1_p">Attention réelle à chaque élève, pas de classes bondées.</p>
+          </div>
+          <div class="bento-card reveal">
+            <div class="ico">②</div>
+            <h3 data-i18n="t2_t">Primaire → Bac</h3>
+            <p data-i18n="t2_p">Soutien adapté à chaque niveau scolaire.</p>
+          </div>
+          <div class="bento-card reveal">
+            <div class="ico">③</div>
+            <h3 data-i18n="t3_t">Langues</h3>
+            <p data-i18n="t3_p">Programmes aussi pour les non scolarisés.</p>
+          </div>
+          <div class="bento-card reveal">
+            <div class="ico">④</div>
+            <h3 data-i18n="t4_t">4 salles</h3>
+            <p data-i18n="t4_p">Espaces dédiés pour un travail serein.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAMMES -->
+    <section id="programmes" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-label" data-i18n="prog_label">Programmes</p>
+          <h2 data-i18n="prog_title">Des programmes clairs</h2>
+          <p data-i18n="prog_sub">Choisissez le parcours qui correspond à votre enfant. Les matières et le rythme se définissent à l’inscription.</p>
+        </div>
+        <div class="programs">
+          <article class="program-card reveal">
+            <span class="tag" data-i18n="p1_tag">Primaire</span>
+            <h3 data-i18n="p1_t">1ère → 6ème</h3>
+            <p data-i18n="p1_p">Bases solides en maths, français, arabe et méthodes de travail.</p>
+          </article>
+          <article class="program-card reveal">
+            <span class="tag" data-i18n="p2_tag">Collège</span>
+            <h3 data-i18n="p2_t">1ère → 3ème</h3>
+            <p data-i18n="p2_p">Renforcement des matières clés et préparation aux contrôles.</p>
+          </article>
+          <article class="program-card reveal">
+            <span class="tag" data-i18n="p3_tag">Lycée</span>
+            <h3 data-i18n="p3_t">Tronc / Bac</h3>
+            <p data-i18n="p3_p">Accompagnement vers le bac avec un suivi régulier.</p>
+          </article>
+          <article class="program-card reveal">
+            <span class="tag" data-i18n="p4_tag">Langues</span>
+            <h3 data-i18n="p4_t">Non scolarisés</h3>
+            <p data-i18n="p4_p">Apprentissage des langues pour tous, hors parcours scolaire classique.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMAGE FEATURE: study desk -->
+    <section class="img-feature section">
+      <div class="container img-feature-grid">
+        <div class="img-feature-media reveal">
+          <div class="media-frame tilt-left">
+            <img src="img/study-desk.png" alt="Espace d'étude Sigma Academie" width="800" height="600" loading="lazy">
+          </div>
+        </div>
+        <div class="img-feature-copy reveal">
+          <p class="section-label" data-i18n="how_label">Parcours</p>
+          <h2 data-i18n="how_title">Comment ça marche</h2>
+          <p class="lead" data-i18n="how_sub">Trois étapes simples, sans complication.</p>
+          <div class="steps-list">
+            <div class="step-row">
+              <div class="n ltr-num">1</div>
+              <div>
+                <h3 data-i18n="h1_t">Inscription</h3>
+                <p data-i18n="h1_p">Vous choisissez le niveau et les matières. On fixe ensemble le tarif selon ce qui est choisi.</p>
+              </div>
+            </div>
+            <div class="step-row">
+              <div class="n ltr-num">2</div>
+              <div>
+                <h3 data-i18n="h2_t">Placement</h3>
+                <p data-i18n="h2_p">Nous plaçons l’élève dans le groupe adapté, manuellement, pour un bon rythme.</p>
+              </div>
+            </div>
+            <div class="step-row">
+              <div class="n ltr-num">3</div>
+              <div>
+                <h3 data-i18n="h3_t">Suivi</h3>
+                <p data-i18n="h3_p">Présence, progrès et communication claire avec les parents.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- POURQUOI + LANGUAGES IMAGE -->
+    <section class="why section" id="pourquoi">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-label" data-i18n="why_label">Avantages</p>
+          <h2 data-i18n="why_title">Pourquoi Sigma Academie</h2>
+          <p data-i18n="why_sub">Un centre pensé pour les familles qui veulent de la clarté et des résultats.</p>
+        </div>
+
+        <div class="why-layout">
+          <div class="why-bento">
+            <div class="why-card reveal">
+              <div class="dot">★</div>
+              <div>
+                <h3 data-i18n="w1_t">Suivi personnalisé</h3>
+                <p data-i18n="w1_p">Chaque élève a un parcours adapté, pas un programme unique pour tous.</p>
+              </div>
+            </div>
+            <div class="why-card reveal">
+              <div class="dot">★</div>
+              <div>
+                <h3 data-i18n="w2_t">Organisation claire</h3>
+                <p data-i18n="w2_p">Emploi du temps, salles et groupes gérés proprement.</p>
+              </div>
+            </div>
+            <div class="why-card reveal">
+              <div class="dot">★</div>
+              <div>
+                <h3 data-i18n="w3_t">Tarification transparente</h3>
+                <p data-i18n="w3_p">Vous payez selon les matières choisies à l’inscription.</p>
+              </div>
+            </div>
+            <div class="why-card reveal">
+              <div class="dot">★</div>
+              <div>
+                <h3 data-i18n="w4_t">Espace dédié</h3>
+                <p data-i18n="w4_p">Quatre salles pour travailler dans de bonnes conditions.</p>
+              </div>
+            </div>
+          </div>
+          <div class="why-media reveal">
+            <div class="media-frame tilt-right">
+              <img src="img/languages.png" alt="Programmes de langues" width="640" height="800" loading="lazy">
+              <div class="media-overlay">
+                <span class="pill" data-i18n="lang_pill">Langues pour tous</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq section">
+      <div class="container narrow">
+        <div class="section-head reveal">
+          <p class="section-label" data-i18n="faq_label">FAQ</p>
+          <h2 data-i18n="faq_title">Questions fréquentes</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item reveal" open>
+            <summary data-i18n="f1_q">Quels niveaux acceptez-vous ?</summary>
+            <p data-i18n="f1_a">Du primaire au bac, ainsi que des programmes de langues pour les non scolarisés.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary data-i18n="f2_q">Comment se fixe le prix ?</summary>
+            <p data-i18n="f2_a">Selon les matières choisies à l’inscription. Le prix par matière peut être adapté au moment de l’inscription.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary data-i18n="f3_q">Comment se font les groupes ?</summary>
+            <p data-i18n="f3_a">Le placement en classe/groupe est manuel, pour respecter le niveau et le rythme de chaque élève.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section id="inscription" class="section">
+      <div class="container">
+        <div class="cta-band reveal">
+          <div class="cta-orb" aria-hidden="true"></div>
+          <div>
+            <h2 data-i18n="cta_band_t">Prêt à commencer ?</h2>
+            <p data-i18n="cta_band_p">Laissez vos coordonnées : on vous rappelle rapidement.</p>
+          </div>
+          <a class="btn btn-gold btn-glow" href="#contact" data-i18n="cta_band_btn">Demander un rappel</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact-section">
+      <div class="container contact-grid">
+        <div class="contact-card reveal">
+          <h2 data-i18n="contact_title">Contact</h2>
+          <p data-i18n="contact_sub">Parlez-nous du niveau de votre enfant et de vos besoins.</p>
+          <div class="contact-meta">
+            <p><strong data-i18n="contact_phone_l">Téléphone</strong><br><span class="ltr-num">0522 00 00 00</span></p>
+            <p><strong data-i18n="contact_city_l">Ville</strong><br>Casablanca, Maroc</p>
+          </div>
+          <p class="form-note" data-i18n="contact_note">Remplacez le numéro et l’adresse par vos vrais coordonnées avant la mise en ligne.</p>
+        </div>
+        <form class="form-card reveal" id="leadForm">
+          <div class="form-row">
+            <div>
+              <label for="name" data-i18n="lab_name">Nom du parent</label>
+              <input id="name" name="name" required autocomplete="name">
+            </div>
+            <div>
+              <label for="phone" data-i18n="lab_phone">Téléphone</label>
+              <input id="phone" class="ltr-num" name="phone" required placeholder="06XXXXXXXX" inputmode="tel" autocomplete="tel">
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="level" data-i18n="lab_level">Niveau de l’élève</label>
+            <select id="level" name="level">
+              <option data-i18n="opt_p">Primaire</option>
+              <option data-i18n="opt_c">Collège</option>
+              <option data-i18n="opt_l">Lycée / Bac</option>
+              <option data-i18n="opt_lang">Langues / Non scolarisé</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="message" data-i18n="lab_msg">Message</label>
+            <textarea id="message" name="message" data-i18n-placeholder="ph_msg" placeholder="Matières souhaitées, disponibilités…"></textarea>
+          </div>
+          <button class="btn btn-gold btn-glow btn-block" type="submit" data-i18n="form_submit">Envoyer</button>
+          <p class="form-note" id="formStatus" hidden></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand-mark sm">S</span>
+        <div>
+          <strong>Sigma Academie</strong><br>
+          <span data-i18n="footer_tag">Soutien scolaire & langues</span>
+        </div>
+      </div>
+      <div class="footer-copy">© <span class="ltr-num">2026</span> Sigma Academie</div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
