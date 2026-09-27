@@ -52,13 +52,19 @@ const dict = {
     f3_q: "Comment se font les groupes ?",
     f3_a: "Le placement en classe/groupe est manuel, pour respecter le niveau et le rythme de chaque élève.",
     cta_band_t: "Prêt à commencer ?",
-    cta_band_p: "Laissez vos coordonnées : on vous rappelle rapidement.",
-    cta_band_btn: "Demander un rappel",
+    cta_band_p: "Appelez-nous ou écrivez-nous sur WhatsApp — ou laissez vos coordonnées ci-dessous.",
+    call_btn: "Appeler",
+    wa_btn: "WhatsApp",
+    wa_label: "WhatsApp",
+    wa_text: "Bonjour Sigma Academie, je souhaite avoir des informations.",
+    wa_float_aria: "Écrire sur WhatsApp : 06 28 50 90 31",
     contact_title: "Contact",
     contact_sub: "Parlez-nous du niveau de votre enfant et de vos besoins.",
-    contact_phone_l: "Téléphone",
-    contact_city_l: "Ville",
-    contact_note: "Remplacez le numéro et l’adresse par vos vrais coordonnées avant la mise en ligne.",
+    contact_phone_l: "Téléphone / WhatsApp",
+    contact_addr_l: "Adresse",
+    contact_addr: "Avenue principale, Mzouda – en face de l'auto-école Boubrik",
+    footer_addr: "Avenue principale, Mzouda – en face de l'auto-école Boubrik",
+    map_link: "Ouvrir la carte de Mzouda (Google Maps)",
     lab_name: "Nom du parent",
     lab_phone: "Téléphone",
     lab_level: "Niveau de l’élève",
@@ -68,8 +74,9 @@ const dict = {
     opt_l: "Lycée / Bac",
     opt_lang: "Langues / Non scolarisé",
     ph_msg: "Matières souhaitées, disponibilités…",
-    form_submit: "Envoyer",
-    form_ok: "Merci. Message prêt — branchez WhatsApp ou un email pour l’envoi réel.",
+    form_submit: "Envoyer sur WhatsApp",
+    form_ok: "Merci ! WhatsApp s’ouvre avec votre message — il suffit d’appuyer sur Envoyer.",
+    form_wa_intro: "Bonjour Sigma Academie, demande d’inscription :",
     footer_tag: "Soutien scolaire & langues"
   },
   ar: {
@@ -125,13 +132,19 @@ const dict = {
     f3_q: "كيفاش كيتوزعو التلاميذ؟",
     f3_a: "التوزيع على الأقسام يدوي، باش نحترمو المستوى وإيقاع كل تلميذ.",
     cta_band_t: "واجاهين تبداو؟",
-    cta_band_p: "خلي رقمك: غادي نتصلو بيك بسرعة.",
-    cta_band_btn: "طلب اتصال",
+    cta_band_p: "اتصل بنا أو راسلنا فواتساب — أو خلّي معلوماتك لتحت.",
+    call_btn: "اتصل",
+    wa_btn: "واتساب",
+    wa_label: "واتساب",
+    wa_text: "السلام عليكم Sigma Academie، بغيت معلومات عافاك.",
+    wa_float_aria: "راسلنا فواتساب: 06 28 50 90 31",
     contact_title: "تواصل",
     contact_sub: "قول لينا على مستوى ولدك وشنو محتاج.",
-    contact_phone_l: "الهاتف",
-    contact_city_l: "المدينة",
-    contact_note: "بدّل الرقم والعنوان بإحداثياتك الحقيقية قبل النشر.",
+    contact_phone_l: "الهاتف / واتساب",
+    contact_addr_l: "العنوان",
+    contact_addr: "الشارع الرئيسي، مزوضة – أمام سيارة التعليم بوبريك",
+    footer_addr: "الشارع الرئيسي، مزوضة – أمام سيارة التعليم بوبريك",
+    map_link: "افتح خريطة مزوضة (Google Maps)",
     lab_name: "اسم الولي",
     lab_phone: "الهاتف",
     lab_level: "مستوى التلميذ",
@@ -141,11 +154,17 @@ const dict = {
     opt_l: "ثانوي / باك",
     opt_lang: "لغات / غير متمدرس",
     ph_msg: "المواد المطلوبة، الأوقات المتاحة…",
-    form_submit: "إرسال",
-    form_ok: "شكراً. الرسالة جاهزة — ربط واتساب أو إيميل للإرسال الحقيقي.",
+    form_submit: "إرسال عبر واتساب",
+    form_ok: "شكراً! غادي يتحل واتساب بالرسالة ديالك — غير ضغط على إرسال.",
+    form_wa_intro: "السلام عليكم Sigma Academie، طلب تسجيل:",
     footer_tag: "دعم مدرسي ولغات"
   }
 };
+
+const WA_NUMBER = "212628509031";
+function waLink(text) {
+  return "https://wa.me/" + WA_NUMBER + (text ? "?text=" + encodeURIComponent(text) : "");
+}
 
 function applyLang(lang) {
   const t = dict[lang] || dict.fr;
@@ -163,6 +182,13 @@ function applyLang(lang) {
   document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
     const key = el.getAttribute("data-i18n-placeholder");
     if (t[key] != null) el.setAttribute("placeholder", t[key]);
+  });
+  document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
+    const key = el.getAttribute("data-i18n-aria");
+    if (t[key] != null) el.setAttribute("aria-label", t[key]);
+  });
+  document.querySelectorAll("a[data-wa]").forEach((a) => {
+    a.href = waLink(t.wa_text);
   });
   document.querySelectorAll(".lang-btn").forEach((b) => {
     b.classList.toggle("active", b.dataset.lang === lang);
@@ -217,10 +243,24 @@ if ("IntersectionObserver" in window) {
 document.getElementById("leadForm")?.addEventListener("submit", (e) => {
   e.preventDefault();
   const lang = document.documentElement.lang || "fr";
+  const t = dict[lang] || dict.fr;
+  const form = e.currentTarget;
+  const val = (name) => (form.elements[name]?.value || "").trim();
+  const lines = [
+    t.form_wa_intro,
+    t.lab_name + ": " + val("name"),
+    t.lab_phone + ": " + val("phone"),
+    t.lab_level + ": " + val("level"),
+  ];
+  if (val("message")) lines.push(t.lab_msg + ": " + val("message"));
+  const url = waLink(lines.join("\n"));
+  const win = window.open(url, "_blank");
+  if (win) win.opener = null;
+  else window.location.href = url;
   const status = document.getElementById("formStatus");
   if (status) {
     status.hidden = false;
-    status.textContent = dict[lang].form_ok;
+    status.textContent = t.form_ok;
   }
 });
 
